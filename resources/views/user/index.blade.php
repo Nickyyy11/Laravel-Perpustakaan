@@ -1,10 +1,13 @@
-<h1>Data User</h1>
+@extends('layout.app')
+@section('title','Data User')
+@section('content')
+
 <div align="right">
-    <a href="{{ route('user.create') }}">Tambah User</a>
+    <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah User</a>
 </div>
 
 
-<table border="1" width="100%">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>No</th>
@@ -19,12 +22,12 @@
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td><a href="{{ route('user.edit', $user->id) }}">Edit</a>
+                <td><a href="{{ route('user.edit', $user->id) }}" class="btn btn-success">Edit</a>
                     <form action="{{ route('user.destroy', $user->id) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button onclick="return confirm ('apakah anda ingin menghapus data?')"
-                            type="submit">Hapus</button>
+                            type="submit" class="btn btn-danger">Hapus</button>
                     </form>
 
                 </td>
@@ -32,3 +35,4 @@
         @endforeach
     </tbody>
 </table>
+@endsection

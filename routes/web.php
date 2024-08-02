@@ -3,7 +3,10 @@
 use App\Http\Controllers\BelajarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Models\Category;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +20,9 @@ use App\Http\Controllers\UserController;
 */
 Route::resource('belajar', BelajarController::class);
 Route::resource('user', UserController::class);
+Route::resource('dashboard', DashboardController::class );
+Route::resource('category', CategoryController::class );
+
 
 Route::get('bagi', [\App\Http\Controllers\BelajarController::class, 'bagi']);
 Route::post('store_bagi', [\App\Http\Controllers\BelajarController::class, 'storeBagi'])->name('store_bagi');
@@ -27,5 +33,5 @@ Route::post('store_kurang', [\App\Http\Controllers\BelajarController::class, 'st
 Route::get('tambah', [\App\Http\Controllers\BelajarController::class, 'tambah']);
 Route::post('store_tambah', [\App\Http\Controllers\BelajarController::class, 'storeTambah'])->name('store_tambah');
 Route::get('/', function () {
-    return view('tambah');
+    return view('login');
 });
