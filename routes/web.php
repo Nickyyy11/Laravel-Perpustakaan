@@ -6,7 +6,10 @@ use App\Http\Controllers;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
+
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BooksController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +23,13 @@ use App\Http\Controllers\CategoryController;
 */
 Route::resource('belajar', BelajarController::class);
 Route::resource('user', UserController::class);
-Route::resource('dashboard', DashboardController::class );
-Route::resource('category', CategoryController::class );
+Route::resource('dashboard', DashboardController::class);
+Route::resource('category', CategoryController::class);
+Route::resource('book', BooksController::class);
 
 
+
+Route::post('actionLogin', [\App\Http\Controllers\LoginController::class, 'actionLogin'])->name('actionLogin');
 Route::get('bagi', [\App\Http\Controllers\BelajarController::class, 'bagi']);
 Route::post('store_bagi', [\App\Http\Controllers\BelajarController::class, 'storeBagi'])->name('store_bagi');
 Route::get('kali', [\App\Http\Controllers\BelajarController::class, 'kali']);

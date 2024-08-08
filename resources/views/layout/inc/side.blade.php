@@ -54,7 +54,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="../layout/top-nav.html" class="nav-link">
+                            <a href="{{route('book.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Buku</p>
                             </a>
@@ -66,13 +66,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../layout/boxed.html" class="nav-link">
+                            <a href="{{route('book.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Anggota</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('user.index')}}" class="nav-link">
+                            <a href="{{route('book.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pengguna</p>
                             </a>
