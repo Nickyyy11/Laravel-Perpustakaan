@@ -6,8 +6,11 @@ use App\Http\Controllers;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
+use App\Models\Pinjam;
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PinjamController;
+
 use App\Http\Controllers\BooksController;
 
 
@@ -26,9 +29,10 @@ Route::resource('user', UserController::class);
 Route::resource('dashboard', DashboardController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('book', BooksController::class);
+Route::resource('pinjam', PinjamController::class);
 
 
-
+Route::get('getBuku/{category_id}', [\App\Http\Controllers\AjaxController::class, 'getDataBuku']);
 Route::post('actionLogin', [\App\Http\Controllers\LoginController::class, 'actionLogin'])->name('actionLogin');
 Route::get('bagi', [\App\Http\Controllers\BelajarController::class, 'bagi']);
 Route::post('store_bagi', [\App\Http\Controllers\BelajarController::class, 'storeBagi'])->name('store_bagi');

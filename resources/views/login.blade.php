@@ -18,6 +18,7 @@
 </head>
 
 <body class="hold-transition login-page">
+    @include('sweetalert::alert')
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ asset('assets/index2.html') }}"><b>Login </b><i>Panel</i></a>
